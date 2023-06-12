@@ -94,6 +94,7 @@ const deletePlayer = async (id) => {
         <img  src="${player.imageUrl}" alt="${player.name}">
         <h4>PlayerId: ${player.id}</h4>
         <p>Name : ${player.name}</p>
+        <p>TeamId: ${player.teamId}</p>
         </div>
         <div class="flip-card-back">
        
@@ -101,7 +102,6 @@ const deletePlayer = async (id) => {
         <p>Status: ${player.status}</p>
         <p>CreatedAt : ${player.createdAt}</p>
         <p>UpdatedAt : ${player.updatedAt}</p>
-        <p>TeamId: ${player.teamId}</p>
         <p>CohortId : ${player.cohortId}</p>
         <button class="details-button" data-id="$player.id}">See Details</button>
         <button class="delete-button" data-id="${player.id}">Delete</button>
@@ -177,10 +177,14 @@ const deletePlayer = async (id) => {
       console.error(error);
     }
   };
+
+
+
   // init function
 const init = async () => {
     // your code here
     const players = await getAllPalyers();
+    
     renderPlayers(players);
   
     
